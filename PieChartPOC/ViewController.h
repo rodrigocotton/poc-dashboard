@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XYPieChart.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <XYPieChartDelegate, XYPieChartDataSource>
 
+@property (strong, nonatomic) IBOutlet XYPieChart *pieChart;
+@property(nonatomic, strong) NSMutableArray *slices;
+@property(nonatomic, strong) NSArray        *sliceColors;
+
+
+@property (weak, nonatomic) IBOutlet UIView *viewColorSliceOne;
+@property (weak, nonatomic) IBOutlet UIView *viewColorSliceTwo;
+
+@property (weak, nonatomic) IBOutlet UILabel *labelSliceOne;
+@property (weak, nonatomic) IBOutlet UILabel *labelSliceTwo;
 
 @end
 
